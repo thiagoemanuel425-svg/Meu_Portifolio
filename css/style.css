@@ -1,0 +1,326 @@
+/* Design tokens & Variáveis :root */
+:root {
+  /* Paleta Principal de cores */
+  --color-bg-primary: #0457FB;
+  --color-bg-secondary: #111114;
+  --color-bg-surface: #9327d1;
+  --color-bg-elevated: #1E1E25;
+  --color-bg-glass: rgba(10, 10, 11, 0.78);
+
+  /* Cores destaque */
+  --color-accent: #6300e4;
+  --color-accent-hover: #D4fa84;
+  --color-accent-dim: rgba(198, 243, 107, 0.12);
+  --color-accent-border: rgba(198, 243, 107, 0.35);
+  --color-accent-glow: rgba(198, 243, 107, 0.18);
+
+  /* Tipografia e hierarquia de contraste */
+  --color-text-primary: #F4F4F6;
+  --color-text-secondary: #A1a1aa;
+  --color-text-muted: #71717a;
+  --color-text-inverse: #0a0a0b;
+
+  /* Bordas Site */
+  --color-border: rgba(255, 21, 40, 0.08);
+  --color-border-strong: rgba(47, 101, 218, 0.16);
+
+  /* Espaçamentos & Geometria */
+  --container-max: 1220px;
+  --header-height: 80px;
+  --section-py: clamp(4.5rem, 8vw, 7.5rem);
+
+  /* Raios das bordas */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Sombras & Elevação */
+  --shadow-card: 0 20px 45px -20px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 40px -10px rgba(198, 243, 107, 0.25);
+
+  /* Transições */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 180ms var(--ease-out);
+  --transition-base: 300ms var(--ease-out);
+  --transition-slow: 500ms var(--ease-out);
+}
+
+/* Reset aplicado ao HTML */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+/* Acessibilidade (oculta textos auxiliares visualmente) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Container centralizado */
+.container {
+  width: min(100% - 2.5rem, var(--container-max));
+  margin-inline: auto;
+}
+
+/* Cabeçalho e Navegação */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: var(--header-height);
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: var(--color-accent-dim);
+  border: 1px solid var(--color-accent-border);
+  color: var(--color-accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.brand-accent {
+  color: var(--color-accent);
+}
+
+/* Oculta o controle mobile no desktop */
+.nav-toggle-input,
+.nav-toggle-btn {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+.Info{
+padding-block: clamp(4rem, 8ww,7rem);
+border-bottom: 1px solid var(--color-border);
+background: radial-gradient(circle at 80% 25%)rgba(198, 243, 107, 0.11),transparent 45%;
+}
+
+.container{
+
+}
+
+.info-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(30px, ifr));
+align-items: center;
+gap:2.5rem;
+}
+
+.badge{
+display: inline-block;
+padding: 0.35rem 0.95rem;
+border-radius: var(--color-border-strong);
+color:var(--color-accent);
+font-family: 'jetBrains Mono', monospace;
+font-size: 0.8rem;
+font-weight: 1.25rem;
+}
+.info-subtitle{
+
+}
+
+.info-title{
+
+}
+
+.info-actions{
+
+}
+
+.btn{
+display : inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.85rem 1.6rem;
+border-radius:var(--radius-full);
+font-weight:600;
+font-size: 0.99;
+border: 1px solid transparent;
+transition: transform var(--transition-fast),background-color var(--transition-fast),border-color var(--transition-fast);
+}
+
+.btn-primary{
+background-color: var(--color-bg-surface);
+color:var(--color-text-inverse);
+}
+
+.btn-secondary{
+background-color:var(--color-bg-surface);
+}
+
+.section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: #0a0ae2;
+    border: 1px solid #17171aa4;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgb(7, 75, 92);
+
+    transition: transform 0.3s ease,
+     box-shadow 0.3s ease;
+}
+
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background: #7289da;
+    color: rgb(47, 12, 202);
+
+    padding: 7px 15px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.info-text {
+    color: #d81212;
+    font-size: 25px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+
+.section h2 {
+    color: rgb(139, 15, 241);
+    font-size: 26px;
+    margin-top: 20px;
+}
+.img{
+  width: 50px;
+  weight: 50px;
+}
