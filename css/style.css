@@ -321,8 +321,8 @@ background-color:var(--color-bg-surface);
     margin-top: 20px;
 }
 .img{
-  width: 50px;
-  weight: 50px;
+  width:30px;
+  weight:40px;
 }
 
 .card {
@@ -348,7 +348,7 @@ background-color:var(--color-bg-surface);
 }
 
 .card-info p {
-    color: #0707dd;
+    color: #dd0707;
     line-height: 1.6;
     margin-top: 5px;
 }
