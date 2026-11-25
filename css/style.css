@@ -327,7 +327,7 @@ background-color:var(--color-bg-surface);
 
 .card {
     background: #00000017;
-    color: white;
+    color: rgba(240, 6, 6, 0.651);
     padding: 30px;
     max-width: 600px;
     margin: 30px auto;
@@ -344,7 +344,7 @@ background-color:var(--color-bg-surface);
 
 .card-info h3 {
     color: #7289da;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 .card-info p {
@@ -352,11 +352,4 @@ background-color:var(--color-bg-surface);
     line-height: 1.6;
     margin-top: 5px;
 }
-.card-text{
-   color: rgba(0, 0, 0, 0);
-    padding: 30px;
-    max-width: 600px;
-    margin: 30px auto;
-    border-radius: 50px;
-    border: 1px solid #0024c5a2;
-}
+ 
