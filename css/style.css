@@ -316,11 +316,47 @@ background-color:var(--color-bg-surface);
 
 
 .section h2 {
-    color: rgb(139, 15, 241);
+    color: rgb(8, 150, 233);
     font-size: 26px;
     margin-top: 20px;
 }
 .img{
   width: 50px;
   weight: 50px;
+}
+
+.card {
+    background: #00000017;
+    color: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 50px;
+    border: 1px solid #34344a;
+    box-shadow: 0 12px 30px rgba(87, 1, 12, 0.5);
+}
+
+.card-info {
+    margin-top: 35px;
+     font-size: 25px;
+    line-height: 1.8;
+}
+
+.card-info h3 {
+    color: #7289da;
+    margin-bottom: 7px;
+}
+
+.card-info p {
+    color: #0707dd;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+.card-text{
+   color: rgba(0, 0, 0, 0);
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 50px;
+    border: 1px solid #0024c5a2;
 }
