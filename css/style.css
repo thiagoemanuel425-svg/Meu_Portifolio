@@ -352,4 +352,8 @@ background-color:var(--color-bg-surface);
     line-height: 1.6;
     margin-top: 5px;
 }
- 
+ .card-sobre{
+  color: #dd0707;
+    line-height: 1.6;
+    margin-top: 5px;
+ }
